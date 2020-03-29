@@ -1,5 +1,5 @@
 // Configuration
-var serverConfig = require("./config/serverConfig");
+const serverConfig = require(__dirname + '/config/server-config.json');
 const host = serverConfig.HOST;
 const port = serverConfig.PORT;
 
