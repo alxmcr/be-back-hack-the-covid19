@@ -5,7 +5,7 @@ const TYPE_MODEL = "Tabla";
 const NAME_MODEL = "Bus";
 // Sequelize: MODELS
 var models = require("../../../models");
-// GET: Listado de Usuarios
+// GET: Listado de Registros de tipo Usuario
 router.get('/', function(req, res, next) {
   res.send('Listado de Usuarios');
 });
