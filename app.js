@@ -11,7 +11,7 @@ var cors = require("cors");
 
 // Definicion de las rutas
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/api/v1/users');
 
 var app = express();
 
