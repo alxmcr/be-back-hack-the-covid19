@@ -1,8 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const RelTiene = sequelize.define('RelTiene', {
-    vi_viaje: DataTypes.INTEGER,
-    us_usuario: DataTypes.INTEGER
+    vi_viaje: {
+      type: DataTypes.INTEGER
+    },
+    us_usuario: {
+      type: DataTypes.INTEGER
+    }
   }, {
     tableName: "RelTiene",
     timestamps: false
