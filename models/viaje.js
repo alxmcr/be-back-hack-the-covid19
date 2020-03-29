@@ -6,9 +6,10 @@ module.exports = (sequelize, DataTypes) => {
     vi_hora_partida: DataTypes.TIME,
     vi_hora_llegada: DataTypes.TIME,
     bu_bus: DataTypes.INTEGER,
-    co_conductor: DataTypes.INTEGER,
     vi_estado: DataTypes.STRING
-  }, {});
+  }, {
+    tableName: "Viaje"
+  });
   Viaje.associate = function(models) {
     // associations can be defined here
   };

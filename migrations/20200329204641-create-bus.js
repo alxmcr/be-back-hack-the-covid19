@@ -1,32 +1,23 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Viajes', {
-      id: {
+    return queryInterface.createTable('Bus', {
+      bu_bus: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      vi_codigo: {
+      bu_codigo: {
         type: Sequelize.STRING
       },
-      vi_fecha_viaje: {
-        type: Sequelize.DATE
-      },
-      vi_hora_partida: {
-        type: Sequelize.TIME
-      },
-      vi_hora_llegada: {
-        type: Sequelize.TIME
-      },
-      bu_bus: {
+      bu_placa: {
         type: Sequelize.INTEGER
       },
-      co_conductor: {
+      ru_ruta: {
         type: Sequelize.INTEGER
       },
-      vi_estado: {
+      bu_estado: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -40,6 +31,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Viajes');
+    return queryInterface.dropTable('Bus');
   }
 };

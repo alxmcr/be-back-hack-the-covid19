@@ -1,44 +1,50 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Conductors', {
+    return queryInterface.createTable('UsuarioEnfermo', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      co_codigo: {
+      uf_tipo_enfermedad: {
         type: Sequelize.STRING
       },
-      co_nombre: {
+      uf_codigo: {
         type: Sequelize.STRING
       },
-      co_apellido_paterno: {
+      uf_nombre: {
         type: Sequelize.STRING
       },
-      co_apellido_materno: {
+      uf_apellido_paterno: {
         type: Sequelize.STRING
       },
-      co_carnet_identidad: {
-        type: Sequelize.INTEGER
-      },
-      co_carnet_lugar_exp: {
+      uf_apellido_materno: {
         type: Sequelize.STRING
       },
-      co_direccion_domicilio: {
-        type: Sequelize.STRING
-      },
-      co_telefono_fijo: {
+      uf_carnet_identidad: {
         type: Sequelize.NUMBER
       },
-      co_telefono_movil: {
+      uf_carnet_lugar_exp: {
+        type: Sequelize.STRING
+      },
+      uf_direccion_domicilio: {
+        type: Sequelize.STRING
+      },
+      uf_telefono_fijo: {
         type: Sequelize.NUMBER
       },
-      co_telefono_emergency: {
+      uf_telefono_movil: {
         type: Sequelize.NUMBER
       },
-      co_estado: {
+      uf_telefono_emergency: {
+        type: Sequelize.NUMBER
+      },
+      uf_status_covid: {
+        type: Sequelize.STRING
+      },
+      uf_estado: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -52,6 +58,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Conductors');
+    return queryInterface.dropTable('UsuarioEnfermo');
   }
 };

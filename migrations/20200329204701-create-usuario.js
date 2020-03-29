@@ -1,47 +1,56 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Pasajeros', {
-      id: {
+    return queryInterface.createTable('Usuario', {
+      us_usuario: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      pa_codigo: {
+      us_tipo_usuario: {
         type: Sequelize.STRING
       },
-      pa_nombre: {
+      us_codigo: {
         type: Sequelize.STRING
       },
-      pa_apellido_paterno: {
+      us_nombre: {
         type: Sequelize.STRING
       },
-      pa_apellido_materno: {
+      us_apellido_paterno: {
         type: Sequelize.STRING
       },
-      pa_carnet_identidad: {
-        type: Sequelize.INTEGER
-      },
-      pa_carnet_lugar_exp: {
+      us_apellido_materno: {
         type: Sequelize.STRING
       },
-      pa_direccion_domicilio: {
-        type: Sequelize.STRING
-      },
-      pa_telefono_fijo: {
+      us_carnet_identidad: {
         type: Sequelize.NUMBER
       },
-      pa_telefono_movil: {
-        type: Sequelize.NUMBER
-      },
-      pa_telefono_emergency: {
-        type: Sequelize.NUMBER
-      },
-      pa_status_covid: {
+      us_carnet_lugar_exp: {
         type: Sequelize.STRING
       },
-      pa_estado: {
+      us_direccion_domicilio: {
+        type: Sequelize.STRING
+      },
+      us_telefono_fijo: {
+        type: Sequelize.NUMBER
+      },
+      us_telefono_movil: {
+        type: Sequelize.NUMBER
+      },
+      us_telefono_emergency: {
+        type: Sequelize.NUMBER
+      },
+      us_licencia_conducir: {
+        type: Sequelize.STRING
+      },
+      us_categoria_licencia: {
+        type: Sequelize.STRING
+      },
+      us_status_covid: {
+        type: Sequelize.STRING
+      },
+      us_estado: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -55,6 +64,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Pasajeros');
+    return queryInterface.dropTable('Usuario');
   }
 };

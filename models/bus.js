@@ -5,7 +5,9 @@ module.exports = (sequelize, DataTypes) => {
     bu_placa: DataTypes.INTEGER,
     ru_ruta: DataTypes.INTEGER,
     bu_estado: DataTypes.STRING
-  }, {});
+  }, {
+    tableName: "Bus"
+  });
   Bus.associate = function(models) {
     // associations can be defined here
   };

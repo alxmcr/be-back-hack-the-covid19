@@ -2,7 +2,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Ruta', {
-      id: {
+      ru_ruta: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -17,7 +17,7 @@ module.exports = {
       ru_lugar_destino: {
         type: Sequelize.STRING
       },
-      bu_estado: {
+      ru_estado: {
         type: Sequelize.STRING
       },
       createdAt: {
