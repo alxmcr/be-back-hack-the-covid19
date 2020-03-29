@@ -1,32 +1,46 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const UsuarioEnfermo = sequelize.define('UsuarioEnfermo', {
+    uf_usuario_enfermo: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true
+    },
     uf_tipo_enfermedad: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     uf_tipo_usuario: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     uf_codigo: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     uf_nombre: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     uf_apellido_paterno: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     uf_apellido_materno: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     uf_carnet_identidad: {
       type: DataTypes.NUMBER
     },
     uf_carnet_lugar_exp: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     uf_direccion_domicilio: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     uf_telefono_fijo: {
       type: DataTypes.NUMBER
@@ -38,16 +52,20 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.NUMBER
     },
     uf_licencia_conducir: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     uf_categoria_licencia: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     uf_statuf_covid: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     uf_estado: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     }
   }, {
     tableName: "UsuarioEnfermo"

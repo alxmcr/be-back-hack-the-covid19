@@ -1,17 +1,27 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Bus = sequelize.define('Bus', {
+    bu_bus: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true
+    },
     bu_codigo: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     bu_placa: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     ru_ruta: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     bu_estado: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     }
   }, {
     tableName: "Bus"

@@ -1,50 +1,71 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Usuario = sequelize.define('Usuario', {
+    us_usuario: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true
+    },
     us_tipo_usuario: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     us_codigo: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     us_nombre: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     us_apellido_paterno: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     us_apellido_materno: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     us_carnet_identidad: {
-      type: DataTypes.NUMBER
+      type: DataTypes.NUMBER,
+      allowNull: false,
     },
     us_carnet_lugar_exp: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     us_direccion_domicilio: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     us_telefono_fijo: {
-      type: DataTypes.NUMBER
+      type: DataTypes.NUMBER,
+      allowNull: false,
     },
     us_telefono_movil: {
-      type: DataTypes.NUMBER
+      type: DataTypes.NUMBER,
+      allowNull: false,
     },
     us_telefono_emergency: {
-      type: DataTypes.NUMBER
+      type: DataTypes.NUMBER,
+      allowNull: false,
     },
     us_licencia_conducir: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     us_categoria_licencia: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     us_status_covid: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     us_estado: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     }
   }, {
     tableName: "Usuario"

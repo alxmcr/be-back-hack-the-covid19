@@ -1,23 +1,35 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Viaje = sequelize.define('Viaje', {
+    vi_viaje: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true
+    },
     vi_codigo: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     vi_fecha_viaje: {
-      type: DataTypes.DATE
+      type: DataTypes.DATE,
+      allowNull: false,
     },
     vi_hora_partida: {
-      type: DataTypes.TIME
+      type: DataTypes.TIME,
+      allowNull: false,
     },
     vi_hora_llegada: {
-      type: DataTypes.TIME
+      type: DataTypes.TIME,
+      allowNull: false,
     },
     bu_bus: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     vi_estado: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     }
   }, {
     tableName: "Viaje"

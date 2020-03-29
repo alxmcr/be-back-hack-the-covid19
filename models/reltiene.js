@@ -2,10 +2,12 @@
 module.exports = (sequelize, DataTypes) => {
   const RelTiene = sequelize.define('RelTiene', {
     vi_viaje: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
     us_usuario: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   }, {
     tableName: "RelTiene",
