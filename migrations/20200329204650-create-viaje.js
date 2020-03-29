@@ -27,6 +27,10 @@ module.exports = {
       bu_bus: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: {
+          model: "Bus",
+          key: "bu_bus"
+        }
       },
       vi_estado: {
         type: Sequelize.STRING,

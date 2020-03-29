@@ -19,6 +19,10 @@ module.exports = {
       ru_ruta: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: {
+          model: "Ruta",
+          key: "ru_ruta"
+        }
       },
       bu_estado: {
         type: Sequelize.STRING,
