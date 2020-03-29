@@ -29,7 +29,7 @@ module.exports = {
         allowNull: false,
       },
       us_carnet_identidad: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.BIGINT,
         allowNull: false,
       },
       us_carnet_lugar_exp: {
@@ -41,15 +41,15 @@ module.exports = {
         allowNull: false,
       },
       us_telefono_fijo: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.BIGINT,
         allowNull: false,
       },
       us_telefono_movil: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.BIGINT,
         allowNull: false,
       },
       us_telefono_emergency: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.BIGINT,
         allowNull: false,
       },
       us_licencia_conducir: {

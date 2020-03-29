@@ -29,7 +29,7 @@ module.exports = {
         allowNull: false,
       },
       uf_carnet_identidad: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.BIGINT,
         allowNull: false,
       },
       uf_carnet_lugar_exp: {
@@ -41,15 +41,15 @@ module.exports = {
         allowNull: false,
       },
       uf_telefono_fijo: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.BIGINT,
         allowNull: false,
       },
       uf_telefono_movil: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.BIGINT,
         allowNull: false,
       },
       uf_telefono_emergency: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.BIGINT,
         allowNull: false,
       },
       uf_status_covid: {
