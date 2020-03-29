@@ -9,16 +9,20 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       ru_codigo: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       ru_lugar_partida: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING, 
+        allowNull: false,
       },
       ru_lugar_destino: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       ru_estado: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,

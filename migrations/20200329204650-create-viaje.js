@@ -9,22 +9,28 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       vi_codigo: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       vi_fecha_viaje: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false,
       },
       vi_hora_partida: {
-        type: Sequelize.TIME
+        type: Sequelize.TIME,
+        allowNull: false,
       },
       vi_hora_llegada: {
-        type: Sequelize.TIME
+        type: Sequelize.TIME,
+        allowNull: false,
       },
       bu_bus: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
       vi_estado: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,

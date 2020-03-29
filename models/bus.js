@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Bus = sequelize.define('Bus', {
     bu_codigo: DataTypes.STRING,
-    bu_placa: DataTypes.INTEGER,
+    bu_placa: DataTypes.STRING,
     ru_ruta: DataTypes.INTEGER,
     bu_estado: DataTypes.STRING
   }, {
