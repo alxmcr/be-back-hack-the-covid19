@@ -3,7 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "createdb": "npx sequelize db:create",
+    "dropdb": "npx sequelize db:drop",
+    "migrate": "npx sequelize db:migrate",
+    "undo": "npx sequelize db:migrate:undo:all",
+    "filldb": "npx sequelize db:seed:all",
+    "filldbdebug": "npx sequelize db:seed:all --debug",
+    "emptydb": "npx sequelize db:seed:undo:all"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
