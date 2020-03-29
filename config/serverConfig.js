@@ -5,7 +5,5 @@ module.exports = {
     photography: "",
     avatar: ""
   },
-  VERSION: {
-    api: "v1"
-  }
+  API_VERSION: "v1"
 };
