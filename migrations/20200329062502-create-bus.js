@@ -11,6 +11,12 @@ module.exports = {
       bu_codigo: {
         type: Sequelize.STRING
       },
+      bu_placa: {
+        type: Sequelize.INTEGER
+      },
+      ru_ruta: {
+        type: Sequelize.INTEGER
+      },
       bu_estado: {
         type: Sequelize.STRING
       },
