@@ -10,6 +10,19 @@ module.exports = (sequelize, DataTypes) => {
   });
   Bus.associate = function(models) {
     // associations can be defined here
+    Bus.belongsTo(models.Ruta, {
+      foreignKey: {
+        name: "ru_ruta",
+        allowNull: false
+      }
+    });
+
+    Bus.hasMany(models.Viaje, {
+      foreignKey: {
+        name: "vi_viaje",
+        allowNull: false
+      }
+    });
   };
   return Bus;
 };

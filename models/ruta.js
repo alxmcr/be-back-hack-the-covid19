@@ -10,6 +10,12 @@ module.exports = (sequelize, DataTypes) => {
   });
   Ruta.associate = function(models) {
     // associations can be defined here
+    Ruta.hasMany(models.Bus, {
+      foreignKey: {
+        name: "ru_ruta",
+        allowNull: false
+      }
+    });
   };
   return Ruta;
 };

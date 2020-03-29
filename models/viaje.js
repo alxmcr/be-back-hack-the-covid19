@@ -12,6 +12,12 @@ module.exports = (sequelize, DataTypes) => {
   });
   Viaje.associate = function(models) {
     // associations can be defined here
+    Viaje.belongsTo(models.Bus, {
+      foreignKey: {
+        name: "bu_bus",
+        allowNull: false
+      }
+    });
   };
   return Viaje;
 };
