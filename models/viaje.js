@@ -27,8 +27,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     vi_estado: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.BOOLEAN
     }
   }, {
     tableName: "Viaje"

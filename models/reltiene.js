@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
     });
   };
 
-  // ID
+  // Remove the ID
   RelTiene.removeAttribute('id');
 
   return RelTiene;

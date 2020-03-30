@@ -1,72 +1,64 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Usuario', {
-      us_usuario: {
+    return queryInterface.createTable('UsuarioEnfermo', {
+      ue_usuario_enfermo: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      us_tipo_usuario: {
+      ue_tipo_enfermedad: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      us_codigo: {
+      ue_codigo: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      us_nombre: {
+      ue_nombre: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      us_apellido_paterno: {
+      ue_apellido_paterno: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      us_apellido_materno: {
+      ue_apellido_materno: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      us_carnet_identidad: {
+      ue_carnet_identidad: {
         type: Sequelize.BIGINT,
         allowNull: false,
       },
-      us_carnet_lugar_exp: {
+      ue_carnet_lugar_exp: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      us_direccion_domicilio: {
+      ue_direccion_domicilio: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      us_telefono_fijo: {
+      ue_telefono_fijo: {
         type: Sequelize.BIGINT,
         allowNull: false,
       },
-      us_telefono_movil: {
+      ue_telefono_movil: {
         type: Sequelize.BIGINT,
         allowNull: false,
       },
-      us_telefono_emergency: {
+      ue_telefono_emergency: {
         type: Sequelize.BIGINT,
         allowNull: false,
       },
-      us_licencia_conducir: {
-        type: Sequelize.STRING,
-        allowNull: false,
+      ue_status_covid: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
       },
-      us_categoria_licencia: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      us_status_covid: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      us_estado: {
-        type: Sequelize.STRING,
-        allowNull: false,
+      ue_estado: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
       },
       createdAt: {
         allowNull: false,
@@ -79,6 +71,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Usuario');
+    return queryInterface.dropTable('UsuarioEnfermo');
   }
 };

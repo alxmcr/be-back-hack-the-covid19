@@ -21,8 +21,8 @@ module.exports = {
         allowNull: false,
       },
       ru_estado: {
-        type: Sequelize.STRING,
-        allowNull: false,
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
       },
       createdAt: {
         allowNull: false,

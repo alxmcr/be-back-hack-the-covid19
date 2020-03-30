@@ -32,8 +32,8 @@ module.exports = {
         }
       },
       vi_estado: {
-        type: Sequelize.STRING,
-        allowNull: false,
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
       },
       createdAt: {
         allowNull: false,

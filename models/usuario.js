@@ -59,13 +59,23 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    us_status_covid: {
+    us_email: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    us_estado: {
+    us_username: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    us_password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    us_status_covid: {
+      type: DataTypes.BOOLEAN,
+    },
+    us_estado: {
+      type: DataTypes.BOOLEAN,
     }
   }, {
     tableName: "Usuario"

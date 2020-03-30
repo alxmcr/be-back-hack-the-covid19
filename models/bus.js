@@ -20,8 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     bu_estado: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.BOOLEAN,
     }
   }, {
     tableName: "Bus"

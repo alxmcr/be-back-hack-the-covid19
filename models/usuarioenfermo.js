@@ -1,59 +1,57 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const UsuarioEnfermo = sequelize.define('UsuarioEnfermo', {
-    uf_usuario_enfermo: {
+    ue_usuario_enfermo: {
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
       primaryKey: true
     },
-    uf_tipo_enfermedad: {
+    ue_tipo_enfermedad: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    uf_codigo: {
+    ue_codigo: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    uf_nombre: {
+    ue_nombre: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    uf_apellido_paterno: {
+    ue_apellido_paterno: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    uf_apellido_materno: {
+    ue_apellido_materno: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    uf_carnet_identidad: {
+    ue_carnet_identidad: {
       type: DataTypes.NUMBER
     },
-    uf_carnet_lugar_exp: {
+    ue_carnet_lugar_exp: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    uf_direccion_domicilio: {
+    ue_direccion_domicilio: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    uf_telefono_fijo: {
+    ue_telefono_fijo: {
       type: DataTypes.NUMBER
     },
-    uf_telefono_movil: {
+    ue_telefono_movil: {
       type: DataTypes.NUMBER
     },
-    uf_telefono_emergency: {
+    ue_telefono_emergency: {
       type: DataTypes.NUMBER
     },
-    uf_status_covid: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    ue_status_covid: {
+      type: DataTypes.BOOLEAN
     },
-    uf_estado: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    ue_estado: {
+      type: DataTypes.BOOLEAN
     }
   }, {
     tableName: "UsuarioEnfermo"

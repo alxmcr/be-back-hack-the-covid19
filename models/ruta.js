@@ -20,8 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     ru_estado: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.BOOLEAN,
     }
   }, {
     tableName: "Ruta"
