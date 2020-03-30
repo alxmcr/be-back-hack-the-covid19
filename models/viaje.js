@@ -21,7 +21,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     vi_hora_llegada: {
       type: DataTypes.TIME,
-      allowNull: false,
     },
     bu_bus: {
       type: DataTypes.INTEGER,

@@ -22,7 +22,6 @@ module.exports = {
       },
       vi_hora_llegada: {
         type: Sequelize.TIME,
-        allowNull: false,
       },
       bu_bus: {
         type: Sequelize.INTEGER,
