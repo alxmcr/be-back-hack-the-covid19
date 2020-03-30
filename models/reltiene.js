@@ -31,5 +31,9 @@ module.exports = (sequelize, DataTypes) => {
       }
     });
   };
+
+  // ID
+  RelTiene.removeAttribute('id');
+
   return RelTiene;
 };
