@@ -4,20 +4,23 @@
     "password": "postgres",
     "database": "hackthecovid_development",
     "host": "localhost",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging": false
   },
   "test": {
     "username": "postgres",
     "password": "postgres",
     "database": "hackthecovid_test",
     "host": "localhost",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging": false
   },
   "production": {
     "username": "postgres",
     "password": "postgres",
     "database": "hackthecovid_production",
     "host": "localhost",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging": false
   }
 }
