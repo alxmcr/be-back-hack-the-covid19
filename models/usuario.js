@@ -59,6 +59,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    us_avatar: {
+      type: DataTypes.STRING,
+      defaultValue:
+        "https://raw.githubusercontent.com/alxmcr/assets-online-store/master/avatar/profile.png"
+    },
     us_email: {
       type: DataTypes.STRING,
       allowNull: false,

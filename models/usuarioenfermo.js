@@ -47,6 +47,11 @@ module.exports = (sequelize, DataTypes) => {
     ue_telefono_emergency: {
       type: DataTypes.NUMBER
     },
+    ue_avatar: {
+      type: DataTypes.STRING,
+      defaultValue:
+        "https://raw.githubusercontent.com/alxmcr/assets-online-store/master/avatar/profile.png"
+    },
     ue_status_covid: {
       type: DataTypes.BOOLEAN
     },

@@ -52,6 +52,9 @@ module.exports = {
         type: Sequelize.BIGINT,
         allowNull: false,
       },
+      ue_avatar: {
+        type: Sequelize.STRING
+      },
       ue_status_covid: {
         type: Sequelize.BOOLEAN,
         defaultValue: true

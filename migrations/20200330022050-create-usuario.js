@@ -60,6 +60,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      us_avatar: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       us_email: {
         type: Sequelize.STRING,
         allowNull: false,
