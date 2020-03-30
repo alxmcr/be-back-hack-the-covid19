@@ -79,7 +79,6 @@ router.post("/", function (req, res, next) {
   let operation = "Crear un(a) nuevo Ruta"
   // Request Data
   let dataRutaToCreate = req.body;
-  console.log
 
   modelRutas
     .create(dataRutaToCreate)
