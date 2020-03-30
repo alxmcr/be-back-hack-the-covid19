@@ -5,6 +5,7 @@ const port = serverConfig.PORT;
 const versionAPI = serverConfig.API_VERSION;
 
 var express = require('express');
+var expressListEndpoints = require("express-list-endpoints");
 var bodyParser = require("body-parser");
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -23,6 +24,9 @@ app.use(cors());
 // Definicion de las rutas
 loadRoutes(app, versionAPI);
 
+// TODO
+console.log(expressListEndpoints(app));
+
 // Listen
 app.listen(port, host, function () {
     console.log(`Server is running on http://${host}:${port}`);
@@ -30,6 +34,9 @@ app.listen(port, host, function () {
 
 function loadRoutes(app, versionAPI) {
     var indexRouter = require("./routes/index");
+    // API: Auth
+    var authEmailRouter = require(`./routes/api/${versionAPI}/auth/auth-email-password`);
+
     // API: Entities
     var rutasRouter = require(`./routes/api/${versionAPI}/rutas`);
     var busesRouter = require(`./routes/api/${versionAPI}/buses`);
@@ -40,7 +47,11 @@ function loadRoutes(app, versionAPI) {
     // API: Relationships
     var tienesRouter = require(`./routes/api/${versionAPI}/relationships/tienes`);
 
+    // For Default
     app.use("/", indexRouter);
+
+    // Auth
+    app.use(`/api/${versionAPI}/auth/email`, authEmailRouter);
 
     // API: Entities
     app.use(`/api/${versionAPI}/rutas`, rutasRouter);
