@@ -34,11 +34,11 @@ router.get('/', function (req, res, next) {
 });
 
 /* GET Encontrar un Usuario por su id */
-router.get("/:bu_Usuario", function (req, res, next) {
+router.get("/:us_usuario", function (req, res, next) {
   // OPERATION
   let operation = "Encontrar un Usuario por su ID"
   // ID
-  var id = req.params.bu_Usuario;
+  var id = req.params.us_usuario;
 
   modelUsuario
     .findByPk(id)

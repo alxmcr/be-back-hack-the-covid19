@@ -34,11 +34,11 @@ router.get('/', function (req, res, next) {
 });
 
 /* GET Encontrar un UsuarioEnfermo por su id */
-router.get("/:uf_usuario_enfermo", function (req, res, next) {
+router.get("/:ue_usuario_enfermo", function (req, res, next) {
   // OPERATION
   let operation = "Encontrar un Usuario Enfermo por su ID"
   // ID
-  var id = req.params.uf_usuario_enfermo;
+  var id = req.params.ue_usuario_enfermo;
 
   modelUsuarioEnfermo
     .findByPk(id)
