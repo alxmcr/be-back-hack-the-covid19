@@ -21,12 +21,12 @@ router.post('/', function (req, res, next) {
       where: { us_email, us_password }
     })
     .then(function (usuarioFull) {
-      const { us_usuario, us_nombre, us_apellido_paterno, us_apellido_materno } = usuarioFull;
+      const { us_usuario, us_nombre, us_apellido_paterno, us_apellido_materno, us_avatar, us_email } = usuarioFull;
 
       const resultOK = {
         estado: 200,
         mensaje: `La operacion ${operation} de ${NAME_MODEL} fue un exito`,
-        data: { us_usuario, us_nombre, us_apellido_paterno, us_apellido_materno }
+        data: { us_usuario, us_nombre, us_apellido_paterno, us_apellido_materno, us_avatar, us_email }
       }
       res.status(200).json(resultOK);
     })
