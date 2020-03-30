@@ -88,7 +88,7 @@ router.post("/", function (req, res, next) {
         mensaje: `La operacion ${operation} de ${NAME_MODEL} fue un exito`,
         data: busCreated
       };
-      res.status(resCreated.statusCode).json(resCreated);
+      res.status(201).json(resCreated);
     })
     .catch(err => {
       console.log(err);
