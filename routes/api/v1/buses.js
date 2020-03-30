@@ -33,10 +33,10 @@ router.get('/', function (req, res, next) {
     });
 });
 
-/* GET Buscar un bus por su id */
+/* GET Encontrar un bus por su id */
 router.get("/:bu_bus", function (req, res, next) {
   // OPERATION
-  let operation = "Buscar un bus por su ID"
+  let operation = "Encontrar un bus por su ID"
   // ID
   var id = req.params.bu_bus;
 
@@ -45,14 +45,16 @@ router.get("/:bu_bus", function (req, res, next) {
     .then(function (bus) {
       // Respuesta
       let respuesta = {};
+      let statusCode = 200;
 
       if (bus !== undefined && bus !== null) {
         respuesta = {
           estado: 200,
-          mensaje: `La operacion ${operation} de ${NAME_MODEL} fue un exito`,
+          mensaje: `La operacion ${operation} fue un exito`,
           data: bus
         }
       } else {
+        statusCode = 404
         respuesta = {
           estado: 404,
           mensaje: `Ocurrio un error con el ${operation} de ${NAME_MODEL}, no se pudo encontrar el registro con el id ${id}`,
@@ -60,7 +62,7 @@ router.get("/:bu_bus", function (req, res, next) {
         }
       }
 
-      res.status(respuesta.statusCode).json(respuesta);
+      res.status(statusCode).json(respuesta);
     })
     .catch(err => {
       console.log(err);
