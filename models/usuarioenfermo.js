@@ -11,10 +11,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    uf_tipo_usuario: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     uf_codigo: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -51,15 +47,7 @@ module.exports = (sequelize, DataTypes) => {
     uf_telefono_emergency: {
       type: DataTypes.NUMBER
     },
-    uf_licencia_conducir: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    uf_categoria_licencia: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    uf_statuf_covid: {
+    uf_status_covid: {
       type: DataTypes.STRING,
       allowNull: false,
     },
