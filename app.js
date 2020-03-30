@@ -36,7 +36,6 @@ function loadRoutes(app, versionAPI) {
     var indexRouter = require("./routes/index");
     // API: Auth
     var authEmailRouter = require(`./routes/api/${versionAPI}/auth/auth-email-password`);
-    var authUsernameRouter = require(`./routes/api/${versionAPI}/auth/auth-username-password`);
 
     // API: Entities
     var rutasRouter = require(`./routes/api/${versionAPI}/rutas`);
@@ -52,7 +51,6 @@ function loadRoutes(app, versionAPI) {
     app.use("/", indexRouter);
 
     // Auth
-    app.use(`/api/${versionAPI}/auth/username`, authUsernameRouter);
     app.use(`/api/${versionAPI}/auth/email`, authEmailRouter);
 
     // API: Entities
