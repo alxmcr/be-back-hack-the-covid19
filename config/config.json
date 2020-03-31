@@ -4,7 +4,7 @@
     "password": "4cff641df663ddd7242606d95a43bc90c8e64543eb697eac977d49e8360d2d1d",
     "database": "da07esuj692li1",
     "host": "ec2-54-197-48-79.compute-1.amazonaws.com",
-    "dialect": "4cff641df663ddd7242606d95a43bc90c8e64543eb697eac977d49e8360d2d1d",
+    "dialect": "postgres",
     "logging": true
   },
   "test": {
@@ -12,7 +12,7 @@
     "password": "4cff641df663ddd7242606d95a43bc90c8e64543eb697eac977d49e8360d2d1d",
     "database": "da07esuj692li1",
     "host": "ec2-54-197-48-79.compute-1.amazonaws.com",
-    "dialect": "4cff641df663ddd7242606d95a43bc90c8e64543eb697eac977d49e8360d2d1d",
+    "dialect": "postgres",
     "logging": false
   },
   "production": {
@@ -20,7 +20,7 @@
     "password": "4cff641df663ddd7242606d95a43bc90c8e64543eb697eac977d49e8360d2d1d",
     "database": "da07esuj692li1",
     "host": "ec2-54-197-48-79.compute-1.amazonaws.com",
-    "dialect": "4cff641df663ddd7242606d95a43bc90c8e64543eb697eac977d49e8360d2d1d",
+    "dialect": "postgres",
     "logging": false
   }
 }
