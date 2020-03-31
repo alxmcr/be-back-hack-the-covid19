@@ -5,7 +5,7 @@
     "database": "hackthecovid_development",
     "host": "localhost",
     "dialect": "postgres",
-    "logging": false
+    "logging": true
   },
   "test": {
     "username": "postgres",
