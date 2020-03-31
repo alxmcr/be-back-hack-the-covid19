@@ -17,7 +17,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     vi_hora_partida: {
       type: DataTypes.TIME,
-      allowNull: false,
     },
     vi_hora_llegada: {
       type: DataTypes.TIME,

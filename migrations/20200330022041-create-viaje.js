@@ -18,7 +18,6 @@ module.exports = {
       },
       vi_hora_partida: {
         type: Sequelize.TIME,
-        allowNull: false,
       },
       vi_hora_llegada: {
         type: Sequelize.TIME,
