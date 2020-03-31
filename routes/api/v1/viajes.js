@@ -75,15 +75,47 @@ router.get("/:vi_viaje", function(req, res, next) {
     });
 });
 
-/* GET: Buscar los viajes de un terminado bus  */
+/* GET: Buscar los todos los viajes de un determinado bus  */
 router.get("/buses/:bu_bus", function(req, res, next) {
   // OPERATION
-  let operation = "Buscar los viajes de un terminado bus";
+  let operation = "Buscar los todos los viajes de un determinado bus";
   // ID
   let { bu_bus } = req.params;
   // Condition
   let condition = {
     where: { bu_bus }
+  };
+
+  modelViaje
+    .findAll(condition)
+    .then(function(listaViaje) {
+      const resultOK = {
+        estado: 200,
+        mensaje: `La operacion ${operation} de ${NAME_MODEL} fue un exito`,
+        data: listaViaje
+      };
+      res.status(200).json(resultOK);
+    })
+    .catch(err => {
+      console.log(err);
+      const errorBackend = {
+        estado: 500,
+        mensaje: `Ocurrio un error con el ${operation} de ${NAME_MODEL}`,
+        data: {}
+      };
+      res.status(500).send(errorBackend);
+    });
+});
+
+/* GET: Buscar los todos los viajes 'activos' de un determinado bus  */
+router.get("/buses/:bu_bus/activos", function(req, res, next) {
+  // OPERATION
+  let operation = "Buscar los todos los viajes de un determinado bus";
+  // ID
+  let { bu_bus } = req.params;
+  // Condition
+  let condition = {
+    where: { bu_bus, vi_estado: true }
   };
 
   modelViaje
