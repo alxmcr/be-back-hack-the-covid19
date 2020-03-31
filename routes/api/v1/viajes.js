@@ -76,7 +76,7 @@ router.get("/:vi_viaje", function(req, res, next) {
 });
 
 /* GET: Buscar los viajes de un terminado bus  */
-router.get("/bus/:bu_bus", function(req, res, next) {
+router.get("/buses/:bu_bus", function(req, res, next) {
   // OPERATION
   let operation = "Buscar los viajes de un terminado bus";
   // ID
