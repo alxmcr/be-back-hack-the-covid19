@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "start": "nodemon app.js",
     "dev": "nodemon app.js",
     "createdb": "npx sequelize db:create",
     "dropdb": "npx sequelize db:drop",
