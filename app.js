@@ -55,7 +55,6 @@ function loadRoutes(app, versionAPI) {
     app.use(`/api/${versionAPI}/auth/email`, authEmailRouter);
     app.use(`/api/${versionAPI}/auth/username`, authUsernameRouter);
 
-
     // API: Entities
     app.use(`/api/${versionAPI}/rutas`, rutasRouter);
     app.use(`/api/${versionAPI}/buses`, busesRouter);
