@@ -5,15 +5,18 @@ const TYPE_MODEL = "Tabla";
 const NAME_MODEL = "Bus";
 // Sequelize: MODELS
 var models = require("../../../models");
-// MODEL
+// MODELS
 let modelBus = models.Bus;
+let modelRuta = models.Ruta;
 // GET: Listado de Registros de tipo Bus
 router.get('/', function (req, res, next) {
   // OPERATION
   let operation = "Listar los registros"
 
   modelBus
-    .findAll()
+    .findAll({
+      include: [{ model: modelRuta, as: "Ruta" }]
+    })
     .then(function (listaBus) {
       const resultOK = {
         estado: 200,

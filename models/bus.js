@@ -31,7 +31,8 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: {
         name: "ru_ruta",
         allowNull: false
-      }
+      },
+      as: "Ruta"
     });
 
     Bus.hasMany(models.Viaje, {
