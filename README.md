@@ -9,7 +9,8 @@ Backend del proyecto La Paz te cuida para brinda servicios WEB
 Generar servicios REST de FACIL Acceso
 
 ## Capturas de pantalla
-Incluir logos o capturas de pantalla de las interfaces mas relevantes del proyecto.
+
+![Logo](https://raw.githubusercontent.com/alxmcr/front-hack-the-covid19/master/Logo.png)
 
 ## Tecnologías/Frameworks utilizados
 Ejemplo) - NpdeJS, ExpressJS, Axios, Sequelize y Body-parser. 
