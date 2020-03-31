@@ -28,8 +28,9 @@ loadRoutes(app, versionAPI);
 console.log(expressListEndpoints(app));
 
 // Listen
-app.listen(port, host, function () {
-    console.log(`Server is running on http://${host}:${port}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
 
 function loadRoutes(app, versionAPI) {
