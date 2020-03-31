@@ -1,25 +1,29 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 // Nombre del modelo
 const TYPE_MODEL = "Relacion";
 const NAME_MODEL = "RelTienes";
 // Sequelize: MODELS
 var models = require("../../../../models");
-// MODEL
+// MODELS
 let modelRelTienes = models.RelTiene;
+let modelViaje = models.Viaje;
+let modelUsuario = models.Usuario;
 // GET: Listado de Registros de tipo RelTienes
-router.get('/', function (req, res, next) {
+router.get("/", function(req, res, next) {
   // OPERATION
-  let operation = "Listar los registros"
+  let operation = "Listar los registros";
 
   modelRelTienes
-    .findAll()
-    .then(function (listaRelTienes) {
+    .findAll({
+      include: [{ model: modelViaje }, { model: modelUsuario }]
+    })
+    .then(function(listaRelTienes) {
       const resultOK = {
         estado: 200,
         mensaje: `La operacion ${operation} de ${NAME_MODEL} fue un exito`,
         data: listaRelTienes
-      }
+      };
       res.status(200).json(resultOK);
     })
     .catch(err => {
@@ -28,7 +32,7 @@ router.get('/', function (req, res, next) {
         estado: 500,
         mensaje: `Ocurrio un error con el ${operation} de ${NAME_MODEL}`,
         data: {}
-      }
+      };
       res.status(500).send(errorBackend);
     });
 });
@@ -45,7 +49,9 @@ router.get("/viajes/:vi_viaje", function(req, res, next) {
   };
 
   modelRelTienes
-    .findAll(condition)
+    .findAll(condition, {
+      include: [{ model: modelUsuario }]
+    })
     .then(function(listaRelTienes) {
       const resultOK = {
         estado: 200,
@@ -77,7 +83,9 @@ router.get("/usuarios/:us_usuario", function(req, res, next) {
   };
 
   modelRelTienes
-    .findAll(condition)
+    .findAll(condition, {
+      include: [{ model: modelViaje }]
+    })
     .then(function(listaRelTienes) {
       const resultOK = {
         estado: 200,
@@ -98,9 +106,9 @@ router.get("/usuarios/:us_usuario", function(req, res, next) {
 });
 
 /* POST: Creacion de un nuevo RelTiene  */
-router.post("/", function (req, res, next) {
+router.post("/", function(req, res, next) {
   // OPERATION
-  let operation = "Crear un(a) nuevo RelTiene"
+  let operation = "Crear un(a) nuevo RelTiene";
   // Request Data
   let dataRelTieneToCreate = req.body;
 
@@ -120,15 +128,15 @@ router.post("/", function (req, res, next) {
         estado: 500,
         mensaje: `Ocurrio un error con el ${operation} de ${NAME_MODEL}`,
         data: {}
-      }
+      };
       res.status(500).send(errorBackend);
     });
 });
 
 /* DELETE: Eliminar una relacion Tiene por Viaje  */
-router.delete("/:vi_viaje", function (req, res, next) {
+router.delete("/:vi_viaje", function(req, res, next) {
   // OPERATION
-  let operation = "Eliminar una relacion Tiene por Viaje"
+  let operation = "Eliminar una relacion Tiene por Viaje";
   // ID
   let { vi_viaje } = req.params;
   // Condition
@@ -152,15 +160,15 @@ router.delete("/:vi_viaje", function (req, res, next) {
         estado: 500,
         mensaje: `Ocurrio un error con el ${operation} de ${NAME_MODEL}`,
         data: {}
-      }
+      };
       res.status(500).send(errorBackend);
     });
 });
 
 /* DELETE: Eliminar una relacion Tiene por Usuario  */
-router.delete("/:us_usuario", function (req, res, next) {
+router.delete("/:us_usuario", function(req, res, next) {
   // OPERATION
-  let operation = "Eliminar una relacion Tiene por Usuario"
+  let operation = "Eliminar una relacion Tiene por Usuario";
   // ID
   let { us_usuario } = req.params;
   // Condition
@@ -184,7 +192,7 @@ router.delete("/:us_usuario", function (req, res, next) {
         estado: 500,
         mensaje: `Ocurrio un error con el ${operation} de ${NAME_MODEL}`,
         data: {}
-      }
+      };
       res.status(500).send(errorBackend);
     });
 });
