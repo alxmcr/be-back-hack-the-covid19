@@ -53,11 +53,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     us_licencia_conducir: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     us_categoria_licencia: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     us_avatar: {
       type: DataTypes.STRING,

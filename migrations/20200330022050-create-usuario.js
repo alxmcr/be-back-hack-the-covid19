@@ -54,11 +54,9 @@ module.exports = {
       },
       us_licencia_conducir: {
         type: Sequelize.STRING,
-        allowNull: false,
       },
       us_categoria_licencia: {
         type: Sequelize.STRING,
-        allowNull: false,
       },
       us_avatar: {
         type: Sequelize.STRING,
