@@ -12,6 +12,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      ru_nombre: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       ru_lugar_partida: {
         type: Sequelize.STRING, 
         allowNull: false,

@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    ru_nombre: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     ru_lugar_partida: {
       type: DataTypes.STRING,
       allowNull: false,
