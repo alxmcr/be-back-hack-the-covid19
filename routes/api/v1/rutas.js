@@ -75,7 +75,7 @@ router.get("/:ru_ruta", function (req, res, next) {
     });
 });
 
-/* POST: Creacion de un nuevo Rutas  */
+/* POST: Crear de un nuevo Rutas  */
 router.post("/", function (req, res, next) {
   // OPERATION
   let operation = "Crear un(a) nuevo Ruta"
@@ -91,6 +91,72 @@ router.post("/", function (req, res, next) {
         data: rutaCreated
       };
       res.status(201).json(resCreated);
+    })
+    .catch(err => {
+      console.log(err);
+      const errorBackend = {
+        estado: 500,
+        mensaje: `Ocurrio un error con el ${operation} de ${NAME_MODEL}`,
+        data: {}
+      }
+      res.status(500).send(errorBackend);
+    });
+});
+
+/* PUT: Actualizar de un(a) Ruta  */
+router.put("/:ru_ruta", function (req, res, next) {
+  // OPERATION
+  let operation = "Actualizar un(a) Ruta"
+  // ID
+  let { ru_ruta } = req.params;
+  // Request Data
+  let dataRutaToUpdate = req.body;
+  // Condition
+  let condition = {
+    where: { ru_ruta }
+  };
+
+  modelRutas
+    .update(dataRutaToUpdate, condition)
+    .then(rutaUpdated => {
+      let resUpdated = {
+        estado: 200,
+        mensaje: `La operacion ${operation} de ${NAME_MODEL} fue un exito`,
+        data: rutaUpdated
+      };
+      res.status(200).json(resUpdated);
+    })
+    .catch(err => {
+      console.log(err);
+      const errorBackend = {
+        estado: 500,
+        mensaje: `Ocurrio un error con el ${operation} de ${NAME_MODEL}`,
+        data: {}
+      }
+      res.status(500).send(errorBackend);
+    });
+});
+
+/* DELETE: Eliminar de un(a) Ruta  */
+router.delete("/:ru_ruta", function (req, res, next) {
+  // OPERATION
+  let operation = "Eliminar un(a) Ruta"
+  // ID
+  let { ru_ruta } = req.params;
+  // Condition
+  let condition = {
+    where: { ru_ruta }
+  };
+
+  modelRutas
+    .destroy(condition)
+    .then(() => {
+      let resUpdated = {
+        estado: 200,
+        mensaje: `La operacion ${operation} de ${NAME_MODEL} fue un exito`,
+        data: {}
+      };
+      res.status(200).json(resUpdated);
     })
     .catch(err => {
       console.log(err);
