@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nodemon app.js",
     "dev": "nodemon app.js",
+    "build": "npx sequelize db:migrate",
     "createdb": "npx sequelize db:create",
     "dropdb": "npx sequelize db:drop",
     "migrate": "npx sequelize db:migrate",
