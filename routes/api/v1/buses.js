@@ -103,5 +103,71 @@ router.post("/", function (req, res, next) {
     });
 });
 
+/* PUT: Actualizar de un(a) Bus  */
+router.put("/:bu_bus", function (req, res, next) {
+  // OPERATION
+  let operation = "Actualizar un(a) Bus"
+  // ID
+  let { bu_bus } = req.params;
+  // Request Data
+  let dataRutaToUpdate = req.body;
+  // Condition
+  let condition = {
+    where: { bu_bus }
+  };
+
+  modelBus
+    .update(dataRutaToUpdate, condition)
+    .then(busUpdated => {
+      let resUpdated = {
+        estado: 200,
+        mensaje: `La operacion ${operation} de ${NAME_MODEL} fue un exito`,
+        data: busUpdated
+      };
+      res.status(200).json(resUpdated);
+    })
+    .catch(err => {
+      console.log(err);
+      const errorBackend = {
+        estado: 500,
+        mensaje: `Ocurrio un error con el ${operation} de ${NAME_MODEL}`,
+        data: {}
+      }
+      res.status(500).send(errorBackend);
+    });
+});
+
+/* DELETE: Eliminar de un(a) bus  */
+router.delete("/:bu_bus", function (req, res, next) {
+  // OPERATION
+  let operation = "Eliminar un(a) bus"
+  // ID
+  let { bu_bus } = req.params;
+  // Condition
+  let condition = {
+    where: { bu_bus }
+  };
+
+  modelBus
+    .destroy(condition)
+    .then(() => {
+      let resUpdated = {
+        estado: 200,
+        mensaje: `La operacion ${operation} de ${NAME_MODEL} fue un exito`,
+        data: {}
+      };
+      res.status(200).json(resUpdated);
+    })
+    .catch(err => {
+      console.log(err);
+      const errorBackend = {
+        estado: 500,
+        mensaje: `Ocurrio un error con el ${operation} de ${NAME_MODEL}`,
+        data: {}
+      }
+      res.status(500).send(errorBackend);
+    });
+});
+
 
 module.exports = router;
